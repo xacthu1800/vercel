@@ -14,8 +14,8 @@ const port = process.env.PORT || 8000;
 
 const app = express()
 
-app.use('/', home)
 
+app.use('/home', home)
 
 //kiểm tra trạng thái người dungf (đã login chưa)
 
