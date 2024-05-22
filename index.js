@@ -7,7 +7,7 @@ const { log } = require('console');
 const { ObjectId } = require('mongodb');
 const portfinder = require('portfinder');
 
-
+const port = process.env.PORT || 9001;
 
 const {dataUser, dataProduct, delivery, record} = require('./src/config');
 
@@ -453,7 +453,7 @@ app.get("/delivery",calculateTotalQuantity, async(req, res)=>{
 
 
 
-
+/* 
 portfinder.getPort((err, port) => {
     if (err) {
         console.error('Không thể tìm PORT trống:', err);
@@ -461,9 +461,11 @@ portfinder.getPort((err, port) => {
     }
     
     // Lắng nghe trên PORT đã tìm được
-    app.listen(port, () => {
-        console.log(`Server running on :  localhost:${port}`);
-    });
+   
+}); */
+
+app.listen(port, () => {
+    console.log(`Server running on :  localhost:${port}`);
 });
 
 
