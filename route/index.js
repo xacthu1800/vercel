@@ -8,7 +8,7 @@ router.get("/home", async (req, res, next) => {
         const product = await dataProduct.find().sort({ _id: -1 }).limit(12);
         res.render("index", { pros: product, userN: req.session.username, login: "login", logout: "logout" });
     } catch (error) {
-        next(error);
+        next(error); // Pass the error to the error handling middleware
     }
 });
 
