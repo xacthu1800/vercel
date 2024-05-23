@@ -1,6 +1,6 @@
-const express = require("express");
+/* const express = require("express");
 const {dataUser, dataProduct, delivery, record} = require('../src/config.js');
-const { calculateTotalQuantity, generateOrderCode, convertCartToString, getCurrentDate} = require('../middleware/utils')
+const { calculateTotalQuantity, generateOrderCode, convertCartToString, getCurrentDate} = require('../middleware/utils.js')
 const router = express.Router();
 
 // Middleware
@@ -63,4 +63,4 @@ router.get("/logout", async (req, res) => {
     res.redirect("/");
 });
 
-module.exports = router
+module.exports = router */
