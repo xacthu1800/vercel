@@ -6,9 +6,9 @@ const router = express.Router();
 router.get("/home", async (req, res, next) => {
     try {
         const product = await dataProduct.find().sort({ _id: -1 }).limit(12);
-        res.render("../views/index.ejs", { pros: product, userN: req.session.username, login: "login", logout: "logout" });
+        res.render("index", { pros: product, userN: req.session.username, login: "login", logout: "logout" });  // Đặt tên view đúng
     } catch (error) {
-        next(error); // Pass the error to the error handling middleware
+        next(error);  // Chuyển lỗi tới middleware xử lý lỗi
     }
 });
 

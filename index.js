@@ -8,29 +8,30 @@ const port = process.env.PORT || 8000;
 
 const app = express();
 
-// Middleware for session handling
+// Middleware để xử lý session
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: true
 }));
 
-// Set view engine to EJS
+// Thiết lập view engine là EJS
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));  // Thiết lập đúng đường dẫn đến thư mục views
 
 // Serve static files
 app.use(express.static('public'));
 
-// Use home router for `/home` and root (`/`) paths
+// Sử dụng router home cho các đường dẫn `/home` và root (`/`)
 app.use('/', home);
 
-// Error handling middleware
+// Middleware xử lý lỗi
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send(err);
+    res.status(500).send(err.message || 'Something went wrong!');
 });
 
-// Start server
+// Bắt đầu server
 app.listen(port, () => {
-    console.log(`Server running on :  localhost:${port}`);
+    console.log(`Server chạy tại: localhost:${port}`);
 });
