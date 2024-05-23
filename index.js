@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const home = require('./route/index.js');
+const home = require('./route/home.js');
 const session = require('express-session');
 
 const port = process.env.PORT || 8000;
