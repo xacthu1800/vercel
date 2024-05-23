@@ -1,10 +1,11 @@
+const port = process.env.PORT || 8000;
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const home = require('./route/home.js');
 const session = require('express-session');
 
-const port = process.env.PORT || 8000;
+const home = require('./route/home.js');
+const login = require('./route/login.js');
 
 const app = express();
 
@@ -22,8 +23,10 @@ app.set('views', path.join(__dirname, 'views'));  // Thiết lập đúng đư�
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Sử dụng router home cho các đường dẫn `/home` và root (`/`)
+
 app.use('/', home);
+app.use('/user', login)
+
 
 // Middleware xử lý lỗi
 app.use((err, req, res, next) => {

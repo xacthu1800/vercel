@@ -8,8 +8,8 @@
     <title>NHÀ XUẤT BẢN XYZ</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo 2">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="HomePage.css">
-    <script src="/indexFunction.js"></script>
+    <link rel="stylesheet" href="/css/HomePage.css">
+    <script src="/js/indexFunction.js"></script>
     <script>
         const currentPath = window.location.pathname;
         if (!currentPath.startsWith('/danhmuc')) {
@@ -50,7 +50,7 @@
                 <div class="login-box">
                     <% if(userN == null) { %>
                         <!-- TRƯỚC KHI ĐĂNG NHẬP -->
-                        <form id="login-form" class="hidden-form" action="/login" method="post"> <!-- Bắt đầu form ẩn đi -->
+                        <form id="login-form" class="hidden-form" action="/user/login" method="post"> <!-- Bắt đầu form ẩn đi -->
                             <label style="font-size: 1.8rem;"><strong>ĐĂNG NHẬP TÀI KHOẢN</strong></label>
 
                             <label for="uname"><strong>Email:</strong></label>
@@ -61,7 +61,7 @@
 
                             <button type="submit" id="login-button"><strong>ĐĂNG NHẬP</strong></button><br>
                             
-                            <label>Khách hàng mới?<strong><a href="/signup">Tạo tài khoản</a></strong></label>
+                            <label>Khách hàng mới?<strong><a href="/user/signup">Tạo tài khoản</a></strong></label>
                             <label>Quên mật khẩu?<strong><a href="#">Khôi phục mật khẩu</a></strong></label>
                         </form>
                     <% } else { %>

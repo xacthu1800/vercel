@@ -1,8 +1,12 @@
 const express = require("express");
-const { dataProduct } = require('../src/config');
+const {dataUser, dataProduct, delivery, record} = require('../src/config.js');
 const { calculateTotalQuantity, generateOrderCode, convertCartToString, getCurrentDate} = require('../middleware/utils')
+const bcrypt = require('bcrypt');
 
 const router = express.Router();
+
+// Middleware
+router.use(calculateTotalQuantity);
 
 router.get("/", calculateTotalQuantity, async (req, res, next) => {
     try {
