@@ -1,3 +1,4 @@
+
 function calculateTotalQuantity(req, res, next) {
     let totalQuantity = 0;
     if (req.session.cart) {

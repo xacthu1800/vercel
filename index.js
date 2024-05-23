@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const session = require('express-session');
+let globalSearchResult = [];
 
 const home = require('./route/home.js');
 //const login = require('./route/login.js');

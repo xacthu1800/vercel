@@ -1,6 +1,6 @@
 const express = require("express");
 const {dataUser, dataProduct, delivery, record} = require('../src/config.js');
-const { calculateTotalQuantity, generateOrderCode, convertCartToString, getCurrentDate} = require('../middleware/utils')
+const { calculateTotalQuantity, generateOrderCode, convertCartToString, getCurrentDate} = require('../middleware/utils.js')
 const bcrypt = require('bcrypt');
 
 const router = express.Router();
