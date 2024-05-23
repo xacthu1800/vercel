@@ -5,7 +5,7 @@ const path = require('path');
 const session = require('express-session');
 
 const home = require('./route/home.js');
-const login = require('./route/login.js');
+//const login = require('./route/login.js');
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', home);
-app.use('/user', login)
+//app.use('/user', login)
 
 
 // Middleware xử lý lỗi
