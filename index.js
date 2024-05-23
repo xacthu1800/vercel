@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));  // Thiết lập đúng đường dẫn đến thư mục views
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Sử dụng router home cho các đường dẫn `/home` và root (`/`)
 app.use('/', home);
